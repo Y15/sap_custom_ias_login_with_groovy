@@ -8,15 +8,15 @@ import org.jsoup.Connection
 import org.jsoup.helper.HttpConnection
 
 class Login {
-    private String authenticationHost = "sap-ain-azure-vhqbm59d.authentication.eu20.hana.ondemand.com"
-    private String loginURL = "https://sap-ain-azure-vhqbm59d.authentication.eu20.hana.ondemand.com/login"
-    private String authorizeURL = "https://awx6f6jot.accounts.ondemand.com"
-    private String clientID = "848f48cf-94fd-46a7-9faf-2f108036409d"
-    private String redirectURI = "https://sap-ain-azure-vhqbm59d.authentication.eu20.hana.ondemand.com/login/callback/sap.custom"
-    private String xsuaaID = "XSUAA_f6acc815-0230-4904-acf0-620343d23ca7"
-    private String spID = "64788d7144222c41b27ad3c7"
-    private username = "Lorenz.weiss@sce.valantic.com"
-    private password = "M4!@X9dThAqz"
+    private String authenticationHost
+    private String loginURL
+    private String authorizeURL
+    private String clientID
+    private String redirectURI
+    private String xsuaaID
+    private String spID
+    private String username
+    private String password
 
     private String nonce
     private String state
@@ -28,6 +28,18 @@ class Login {
     private Map oAuthAuthorize_cookies
 
     private HttpConnection.Response response_from_post_login
+
+    Login(String authenticationHost, String loginURL, String authorizeURL, String clientID, String redirectURI, String xsuaaID, String spID, String username, String password) {
+        this.authenticationHost = authenticationHost
+        this.loginURL = loginURL
+        this.authorizeURL = authorizeURL
+        this.clientID = clientID
+        this.redirectURI = redirectURI
+        this.xsuaaID = xsuaaID
+        this.spID = spID
+        this.username = username
+        this.password = password
+    }
 
     def callLoginPage(){
 
